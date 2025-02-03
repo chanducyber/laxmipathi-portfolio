@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
     {
         id: 1,
-        title: "Client collaboration +open communication = games that click with players and clients",
+        title: "UE developer specializing in game design, environments, and animation.",
         description: "",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
         imgClassName: "w-full h-full",
@@ -38,7 +38,7 @@ export const gridItems = [
     },
     {
         id: 4,
-        title: "Tech enthusiast and indie game dev",
+        title: "Indie game developer and tech enthusiast",
         description: "",
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "",
