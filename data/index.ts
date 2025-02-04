@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
     {
         id: 1,
-        title: "UE developer specializing in game design, environments, and animation.",
+        title: "UE developer specializing in game design, environments,animation and user interface.",
         description: "",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
         imgClassName: "w-full h-full",
@@ -97,6 +97,20 @@ export const projects = [
         des: "Surreal trailer: Vision Pro product animation showcasing detailed parts.",
         img: "/visionpro.png",
         link: "https://youtu.be/1dmQOnJTkBY",
+    },
+    {
+        id: 5,
+        title: "food farm - user interface",
+        des: "Eco-friendly e-commerce for organic products and sustainability education.",
+        img: "/organicui.png",
+        link: "https://tinyurl.com/3jnt67tk",
+    },
+    {
+        id: 6,
+        title: "denim - user interface",
+        des: "Modern e-commerce for premium denim with seamless shopping and secure checkout.",
+        img: "/denimui.png",
+        link: "https://tinyurl.com/3rsamft4",
     },
     
 ];

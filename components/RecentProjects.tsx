@@ -1,4 +1,4 @@
-"use client"; // Add this directive at the very top
+"use client";
 
 import { useState } from 'react';
 import { projects } from '@/data';
@@ -17,6 +17,15 @@ const RecentProjects = () => {
     if (url.includes('embed')) return url;
     const videoId = url.split(/v\/|v=|youtu\.be\//)[1].split(/[?&]/)[0];
     return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  };
+
+  const handleProjectClick = (e: React.MouseEvent, link: string) => {
+    e.stopPropagation();
+    if (isYouTubeLink(link)) {
+      setSelectedVideo(link);
+    } else {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -44,10 +53,10 @@ const RecentProjects = () => {
               <div className='mt-7 mb-3'>
                 <div className='flex justify-center items-center'>
                   <button 
-                    onClick={() => setSelectedVideo(link)}
+                    onClick={(e) => handleProjectClick(e, link)}
                     className='flex lg:text-xl md:text-xs text-sm text-purple hover:underline cursor-pointer'
                   >
-                    Check Video
+                    {isYouTubeLink(link) ? 'Watch Video' : 'View Project'}
                   </button>
                   <FaLocationArrow className='ms-3' color='#CBACF9' />
                 </div>
@@ -79,22 +88,13 @@ const RecentProjects = () => {
 
               <div className="p-1 rounded-xl overflow-hidden">
                 <div className="aspect-video bg-black rounded-lg overflow-hidden">
-                  {isYouTubeLink(selectedVideo) ? (
-                    <iframe
-                      src={getEmbedUrl(selectedVideo)}
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <video 
-                      src={selectedVideo} 
-                      controls
-                      autoPlay
-                      className="w-full h-full"
-                    />
-                  )}
+                  <iframe
+                    src={getEmbedUrl(selectedVideo)}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               </div>
 
