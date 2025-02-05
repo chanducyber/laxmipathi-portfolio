@@ -15,14 +15,26 @@ const Footer = () => {
                     Reach out to me today and let&apos;s discuss how I can help you
                     achieve your goals.
                 </p>
-                <a href="mailto:laxmipathibodala37@gmail.com">
-                    <MagicButton
-                        title="Let's get in touch"
-                        icon={<FaLocationArrow />}
-                        position="right"
-                    />
-                </a>
+                
+                <div className="flex flex-col md:flex-row gap-4">
+                    <a href="mailto:laxmipathibodala37@gmail.com">
+                        <MagicButton
+                            title="Let's get in touch"
+                            icon={<FaLocationArrow />}
+                            position="right"
+                        />
+                    </a>
+                    
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                        <MagicButton
+                            title="View Resume"
+                            icon={<FaLocationArrow />}
+                            position="right"
+                        />
+                    </a>
+                </div>
             </div>
+
             <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
                 <p className="md:text-base text-sm md:font-normal font-light">
                     Copyright © 2025 Laxmipathi Bodala
